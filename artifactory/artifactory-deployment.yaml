@@ -30,4 +30,8 @@ spec:
           name: artifactory-volume
       volumes:
       - name: artifactory-volume
-        emptyDir: {}
+        hostPath:
+          # directory location on host
+          path: /Users/michi/dev/repo/github/ebook-project/kubernetes-volumes/artifactory
+          # this field is optional
+          type: DirectoryOrCreate

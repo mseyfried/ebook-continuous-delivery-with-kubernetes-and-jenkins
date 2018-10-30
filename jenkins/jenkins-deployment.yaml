@@ -28,7 +28,11 @@ spec:
           readOnly: true
       volumes:
       - name: jenkins-volume
-        emptyDir: {}
+        hostPath:
+          # directory location on host
+          path: /Users/michi/dev/repo/github/ebook-project/kubernetes-volumes/jenkins
+          # this field is optional
+          type: DirectoryOrCreate
       - name: github-private-key-volume
         secret:
           secretName: github-private-key-secret
